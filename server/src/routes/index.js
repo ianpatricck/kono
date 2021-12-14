@@ -1,11 +1,10 @@
 import express from 'express'
+import UserController from '../app/controllers/User.js'
 
 const router = express.Router()
 
-router.get('/', () => {
-    return res.json({
-        message: "Hello World"
-    })
-})
+const user = new UserController()
+
+router.get('/', user.create)
 
 export default router
