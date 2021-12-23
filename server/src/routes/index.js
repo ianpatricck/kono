@@ -1,13 +1,11 @@
 const express = require('express')
-const UserController = require('../app/controllers/User.js')
+const MessageController = require('../app/controllers/MessageController.js')
 
 const router = express.Router()
 
-const user = new UserController()
+const msg = new MessageController()
 
-router.post('/create', user.create)
-router.post('/auth', user.auth)
-router.post('/update', user.update)
-router.post('/delete', user.delete)
+router.post('/message/send', msg.send)
+router.post('/message/delete', msg.delete)
 
 module.exports = router
