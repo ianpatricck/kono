@@ -1,4 +1,4 @@
-const Message = require('../../database/models/Message.js')
+import Message from '../../database/models/Message.js'
 
 class MessageController {
   constructor() {}
@@ -9,4 +9,4 @@ class MessageController {
 
 }
 
-module.exports = MessageController
+export default MessageController

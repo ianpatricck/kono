@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
-require('dotenv').config()
+dotenv.config()
 
 const user      = process.env.DB_USER
 const password  = process.env.DB_PASSWORD
@@ -14,4 +15,4 @@ mongoose.connect(queryConnection, {
   useUnifiedTopology: true
 })
 
-module.exports = mongoose
+export default mongoose
