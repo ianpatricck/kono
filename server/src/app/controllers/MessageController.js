@@ -1,4 +1,4 @@
-import Message from '../../database/models/Message.js'
+import { Message } from '../../database/models/index.js'
 
 class MessageController {
   constructor() {}
