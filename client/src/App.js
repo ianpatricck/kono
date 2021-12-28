@@ -1,12 +1,12 @@
 import React from 'react'
-import { UserProvider } from './context/UserContext'
+import { ApplicationProvider } from './context/AppContext'
 import Routing from './routes'
 
 export default function App() {
   return (
-    <UserProvider>
+    <ApplicationProvider>
       <Routing/> 
-    </UserProvider>
+    </ApplicationProvider>
   )
 }
 
