@@ -5,5 +5,10 @@ const Message = mongoose.model('Message', {
     message_content: String 
 })
 
-export default Message
+const Room = mongoose.model('Room', {
+    created_by: String,
+    name: String 
+})
 
+
+export { Message, Room }
