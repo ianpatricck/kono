@@ -1,8 +1,17 @@
 const rooms = [
   {
-    id: "defaultroom",
-    name: "default",
-    created_by: "Ian Patrick"
+    slug: "lobby",
+    room_name: "Lobby"
+  },
+
+  {
+    slug: "coffe",
+    room_name: "coffe"
+  },
+
+  {
+    slug: "gamming",
+    room_name: "Gamming"
   }
 ]
 
