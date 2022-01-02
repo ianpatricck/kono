@@ -1,16 +1,13 @@
-import { useContext } from 'react'
-import { Context } from './context/AppContext'
-
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate
 } from 'react-router-dom'
 
 import {
   Home,
-  Room
+  Room,
+  Menu
 } from './pages'
 
 export default function Routing() {
@@ -18,7 +15,8 @@ export default function Routing() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />   
-        <Route path="/room" element={<Room />} /> 
+        <Route path="/room/:slug" element={<Room />} /> 
+        <Route path="/menu" element={<Menu />} /> 
       </Routes>
     </Router>
   )
