@@ -1,16 +1,11 @@
-import React, { createContext, useState } from 'react'
-import { api } from '../api'
+import React, { createContext } from 'react'
 
 const Context = createContext()
 
 function ApplicationProvider({ children }) { 
  
   return (
-    <Context.Provider value={
-      { 
-         
-      }
-    }>
+    <Context.Provider value={{ }}>
 
       { children }
     
