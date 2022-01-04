@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { Title, UserForm, ErrorMessage } from '../styles/components'
+
 export default function Home() {
 
   const [username, setUsername] = useState("")
@@ -12,7 +14,7 @@ export default function Home() {
     e.preventDefault()
 
     if (username === "") {
-      return setError("Empty input")
+      return setError("Empty username")
     }
 
     localStorage.setItem("username", username)
@@ -22,14 +24,17 @@ export default function Home() {
 
   return (
     <>
-      <h1>kono chat</h1>
 
-      <form onSubmit={submitUser} method="POST">
-        <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-        <button type="submit">Enter</button>
-  
-        {error}
-      </form>
+      <UserForm onSubmit={submitUser} method="POST">
+        <Title>kono chat</Title>
+
+        <div>
+          <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+          <button type="submit">Enter</button>
+        </div>
+
+        {error ? <ErrorMessage>{error}</ErrorMessage> : null}
+      </UserForm>
     </>
   )
 }
