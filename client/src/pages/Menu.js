@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { api } from '../api'
 
-import { RoomLink, SelectRoomTitle, MenuSection, LoadingRooms, RoomContent } from '../styles/components'
+import { 
+  RoomLink, 
+  SelectRoomTitle, 
+  MenuSection, 
+  LoadingRooms, 
+  RoomContent 
+} from '../styles/components'
 
 export default function Menu() {
 

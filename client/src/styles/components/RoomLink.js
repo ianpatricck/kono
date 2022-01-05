@@ -5,13 +5,13 @@ const RoomLink  = styled(Link)`
   text-decoration: none;
   color: white;
   background-color: ${(props) => props.theme.backgroundRoomLink};
-  padding: 3%;
-  margin: 2%;
+  margin: 5%;
   padding: 2%;
   font-size: 20pt;
   font-family: Andika;
   font-weight: bold;
   border-radius: 15px;
+  text-align: center;
 
   &:hover {
     border-radius: 5px;
