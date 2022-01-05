@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const RoomLink  = styled(Link)`
   text-decoration: none;
   color: white;
-  background-image: linear-gradient(to right, hsl(262, 28%, 60%), hsl(262, 10%, 60%));
+  background-image: ${(props) => props.theme.backgroundRoomLink};
   padding: 3%;
   margin: 2%;
   padding: 2%;
@@ -15,7 +15,7 @@ const RoomLink  = styled(Link)`
 
   &:hover {
     border-radius: 5px;
-    background-image: linear-gradient(to right, hsl(262, 40%, 60%), hsl(262, 20%, 60%));
+    background-image: ${(props) => props.theme.backgroundRoomLinkHover};
     transition-duration: .5s;
   }
 `
