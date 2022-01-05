@@ -14,12 +14,7 @@ import {
 export default function Menu() {
 
   const [rooms, setRooms] = useState([])
-  const navigate = useNavigate()
-
-  /*
-   * Loading que espera a redenrização do array das salas (rooms)
-   *
-   */
+  const navigate = useNavigate() 
 
   const [loading, setLoading] = useState(true)
 
