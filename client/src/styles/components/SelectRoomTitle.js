@@ -5,7 +5,6 @@ const SelectRoomTitle = styled.h1`
   font-size: 25pt;
   font-family: M Plus;
   font-weight: bold;
-  text-align: center;
 `
 
 export default SelectRoomTitle
