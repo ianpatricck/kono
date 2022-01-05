@@ -24,9 +24,13 @@ const UserForm = styled.form`
     font-size: 15pt; 
   }
 
-  button {
-    background-color: #23c19d;
+  input::placeholder {
     color: white;
+  }
+
+  button {
+    background-color: ${(props) => props.theme.buttonSuccessBgColor};
+    color: ${(props) => props.theme.buttonSuccessColor};
     font-family: Arial;
     font-size: 18px;
     width: 40%; 
