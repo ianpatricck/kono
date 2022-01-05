@@ -1,11 +1,11 @@
-import Title from './Title'
-import UserForm from './UserForm'
-import ErrorMessage from './ErrorMessage'
-import SelectRoomTitle from './SelectRoomTitle'
-import MenuSection from './MenuSection'
-import LoadingRooms from './LoadingRooms' 
-import RoomContent from './RoomContent' 
-import RoomLink from './RoomLink' 
+import Title from './Home/Title'
+import UserForm from './Home/UserForm'
+import ErrorMessage from './Home/ErrorMessage'
+import SelectRoomTitle from './Menu/SelectRoomTitle'
+import MenuSection from './Menu/MenuSection'
+import LoadingRooms from './Menu/LoadingRooms' 
+import RoomContent from './Menu/RoomContent' 
+import RoomLink from './Menu/RoomLink' 
 
 export {
   Title,
