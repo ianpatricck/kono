@@ -12,7 +12,12 @@ const rooms = [
   {
     slug: "gamming",
     room_name: "Gamming"
-  }
+  },
+
+  {
+    slug: "programming",
+    room_name: "Programming"
+  },
 ]
 
 export default rooms
