@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { io } from 'socket.io-client' 
 import { SendingMessage, ReceiveMessage } from '../components'
+import { Chat, RoomStyle, SendMessageForm } from '../styles/components/'
 
 const socket = io.connect("http://localhost:4000")
 
@@ -41,16 +42,28 @@ export default function Room() {
 
 
   return (
-    <>
+    <RoomStyle>
 
-      <SendingMessage content={sendingMessage} />      
-      <ReceiveMessage content={receiveContent} />
+      <header>
+        <span>Patrick</span>
+        <span>Crowzada</span>
+        <span>ElCris</span>
+        <span>Konobi</span>
+        <span>Triz</span>
+        <span>Allenzita</span>
+        <span>Joyce</span>
+        <span>zAthenaz</span>
+      </header>
+
+      <Chat>
+        <SendingMessage content={sendingMessage} />      
+        <ReceiveMessage content={receiveContent} />
       
-      <form onSubmit={ sendMessage } method="POST">
-        <textarea rows="4" cols="40" onChange={(e) => setMessage(e.target.value)} />
-        <button type="submit">Send</button>
-      </form>
-
-    </>
+        <SendMessageForm onSubmit={ sendMessage } method="POST">
+          <textarea rows="4" cols="40" onChange={(e) => setMessage(e.target.value)} />
+          <button type="submit">Send</button>
+        </SendMessageForm>
+      </Chat>
+    </RoomStyle>
   )
 }

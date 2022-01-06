@@ -24,7 +24,6 @@ export default function Home() {
 
   return (
     <>
-
       <UserForm onSubmit={submitUser} method="POST">
         <Title>kono chat</Title>
 
