@@ -9,5 +9,9 @@ export const lightTheme = {
   errorColor: 'white',
   
   backgroundRoomLink: 'hsl(200, 28%, 60%)',
-  backgroundRoomLinkHover: 'hsl(262, 40%, 60%)'
+  backgroundRoomLinkHover: 'hsl(262, 40%, 60%)',
+  
+  backgroundRoomNavbar: 'hsl(230, 50%, 65%)'
+  
+
 }
