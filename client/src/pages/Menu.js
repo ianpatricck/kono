@@ -38,7 +38,7 @@ export default function Menu() {
   return (
     <MenuSection>
     
-      <SelectRoomTitle>Select room</SelectRoomTitle>
+      <SelectRoomTitle>SELECT ROOM</SelectRoomTitle>
  
           <RoomContent>
             {!loading ? rooms.map((room, index) => (
