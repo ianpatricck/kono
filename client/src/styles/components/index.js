@@ -11,6 +11,8 @@ import RoomLink from './Menu/RoomLink'
 import SendMessageForm from './Rooms/SendMessageForm'
 import RoomStyle from './Rooms/RoomStyle'
 import Chat from './Rooms/Chat'
+import MessageContainer from './Rooms/MessageContainer'
+import NotFoundContainer from './NotFound'
 
 export {
   Title,
@@ -23,5 +25,7 @@ export {
   MenuSection,
   SendMessageForm,
   RoomStyle,
-  Chat
+  Chat,
+  MessageContainer,
+  NotFoundContainer
 }
