@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Chat = styled.div`
-  height: 90vh;
+  height: 95vh;
 
   display: flex;
   flex-direction: column;

@@ -40,7 +40,7 @@ const UserForm = styled.form`
     border-radius: 5px;
 
     &:hover {
-      background-color: #23a69d;
+      background-color: ${(props) => props.theme.buttonSuccessBgColorHover};
       cursor: pointer;
     }
   } 
