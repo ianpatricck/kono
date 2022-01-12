@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Home from \"./Home.js\";\nexport { Home };","map":{"version":3,"sources":["/home/patrick/Área de Trabalho/kono/app/pages/index.js"],"names":["Home"],"mappings":"AAAA,OAAOA,IAAP;AAEA,SACEA,IADF","sourcesContent":["import Home from './Home.js'\n\nexport {\n  Home\n}\n"]},"metadata":{},"sourceType":"module"}

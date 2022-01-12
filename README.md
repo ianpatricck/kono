@@ -9,9 +9,6 @@ This is a FullStack Application test
 
 #### Technologies
 
-- NodeJS
 - Electron
 - React
-- React-Native
-- MongoDB
 - Expo
