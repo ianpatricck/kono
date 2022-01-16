@@ -4,7 +4,7 @@ import { Text, Animated, View } from 'react-native';
 import Wrapper from '../styles/Wrapper'
 
 import {
-  UserLogin,
+  HomeDisplay,
   Title,
   UserForm,
   SetUsernameInput,
@@ -50,7 +50,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <Wrapper>
-      <UserLogin>
+      <HomeDisplay>
     
       <Title>Kono chat</Title>
 
@@ -69,7 +69,7 @@ export default function HomeScreen({ navigation }) {
 
           { error ? <ShowErrorMessage error={error} /> : null }
 
-      </UserLogin>
+      </HomeDisplay>
     </Wrapper>
   )
 }

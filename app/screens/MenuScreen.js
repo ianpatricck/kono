@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Wrapper from '../styles/Wrapper'
 
 import {
-  MenuSection,
+  MenuDisplay,
   SelectRoomTitle,
   RoomContent,
   GoRoom,
@@ -12,7 +12,7 @@ import {
 export default function RoomScreen() {
   return (
     <Wrapper>
-      <MenuSection>
+      <MenuDisplay>
 
         <SelectRoomTitle>SELECT ROOM</SelectRoomTitle>
 
@@ -37,7 +37,7 @@ export default function RoomScreen() {
           </ScrollView>
         </RoomContent>
 
-      </MenuSection>
+      </MenuDisplay>
     </Wrapper>
   )
 }
