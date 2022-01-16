@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const UserForm = styled.form`
+const HomeDisplay = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +46,4 @@ const UserForm = styled.form`
   } 
 `
 
-export default UserForm
+export default HomeDisplay

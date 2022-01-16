@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const MenuSection = styled.div`
+const MenuDisplay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,4 +8,4 @@ const MenuSection = styled.div`
   margin-top: 10vh;
 `
 
-export default MenuSection
+export default MenuDisplay

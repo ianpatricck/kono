@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const RoomStyle = styled.div`
+const RoomDisplay = styled.div`
   
   header {
     position: fixed;
@@ -55,4 +55,4 @@ const RoomStyle = styled.div`
   }
 `
 
-export default RoomStyle
+export default RoomDisplay
