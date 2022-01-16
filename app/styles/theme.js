@@ -9,14 +9,12 @@ export const theme = {
   errorBackground: 'hsl(337, 66%, 54%)',
   errorColor: 'white',
 
-  backgroundRoomLink: 'rgb(48, 52, 93)',
-  backgroundRoomLinkHover: 'rgba(48, 52, 93, .5)',
+  backgroundGoRoom: 'rgb(48, 52, 93)',
 
   backgroundRoomNavbar: 'rgb(48, 65, 100)',
   backgroundMessageArea: 'rgb(40, 50, 100)',
 
   buttonSendMessageBgColor: 'rgb(84, 117, 175)',
-  buttonSendMessageBgColorHover: 'rgba(84, 117, 175, .5)',
 
   messageBgColor: 'rgb(34, 51, 93)',
   messageColor: 'white',

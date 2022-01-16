@@ -1,5 +1,5 @@
 import {
-  MenuSection,
+  MenuDisplay,
   SelectRoomTitle,
   RoomContent,
   GoRoom,
@@ -7,7 +7,7 @@ import {
 } from './Menu'
 
 export {
-  MenuSection,
+  MenuDisplay,
   SelectRoomTitle,
   RoomContent,
   GoRoom,

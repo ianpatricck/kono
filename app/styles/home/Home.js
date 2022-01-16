@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-const UserLogin = styled.View`
+const HomeDisplay = styled.View`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +58,7 @@ const Error = styled.Text`
 `
 
 export { 
-  UserLogin, 
+  HomeDisplay, 
   Title,
   UserForm, 
   SetUsernameInput,

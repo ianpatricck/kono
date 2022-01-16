@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-const MenuSection = styled.View`
+const MenuDisplay = styled.View`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +37,7 @@ const GoRoomText  = styled.Text`
 `
 
 export {
-  MenuSection,
+  MenuDisplay,
   SelectRoomTitle,
   RoomContent,
   GoRoom,

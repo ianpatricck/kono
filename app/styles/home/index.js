@@ -1,5 +1,5 @@
 import {
-  UserLogin,
+  HomeDisplay,
   Title,
   UserForm,
   SetUsernameInput,
@@ -7,10 +7,10 @@ import {
   LoginButtonText,
   Error
 
-} from './UserLogin'
+} from './Home'
 
 export {
-  UserLogin,
+  HomeDisplay,
   Title,
   UserForm,
   SetUsernameInput,
