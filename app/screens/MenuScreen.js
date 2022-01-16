@@ -1,15 +1,44 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import Wrapper from '../styles/Wrapper'
 
-export default function MenuScreen({ route }) {
-  
-  const { username } = route.params
+import {
+  MenuSection,
+  SelectRoomTitle,
+  RoomContent,
+  GoRoom,
+  GoRoomText
+} from '../styles/menu'
 
+export default function RoomScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Menu Screen</Text>
+    <Wrapper>
+      <MenuSection>
 
-      <Text>{ username }</Text>
-    </View>
+        <SelectRoomTitle>SELECT ROOM</SelectRoomTitle>
+
+        <RoomContent>
+          <ScrollView>
+            <GoRoom onPress={console.log("hello")}>
+              <GoRoomText>Coffee</GoRoomText>
+            </GoRoom>
+
+            <GoRoom onPress={console.log("hello")}>
+              <GoRoomText>404</GoRoomText>
+            </GoRoom>
+    
+            <GoRoom onPress={console.log("hello")}>
+              <GoRoomText>Programming</GoRoomText>
+            </GoRoom>
+    
+            <GoRoom onPress={console.log("hello")}>
+              <GoRoomText>Foods</GoRoomText>
+            </GoRoom>
+    
+          </ScrollView>
+        </RoomContent>
+
+      </MenuSection>
+    </Wrapper>
   )
 }
 
