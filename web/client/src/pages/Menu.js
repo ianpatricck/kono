@@ -5,7 +5,7 @@ import { api } from '../api'
 import { 
   RoomLink, 
   SelectRoomTitle, 
-  MenuSection, 
+  MenuDisplay, 
   LoadingRooms, 
   RoomContent 
 } from '../styles/components'
@@ -36,7 +36,7 @@ export default function Menu() {
 
 
   return (
-    <MenuSection>
+    <MenuDisplay>
     
       <SelectRoomTitle>SELECT ROOM</SelectRoomTitle>
  
@@ -57,6 +57,6 @@ export default function Menu() {
             )}
 
         </RoomContent>
-    </MenuSection>
+    </MenuDisplay>
   )
 }

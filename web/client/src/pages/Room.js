@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { Chat, RoomStyle } from '../styles/components/'
+import { Chat, RoomDisplay } from '../styles/components/'
 import { Context } from '../context/AppContext'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -22,7 +22,7 @@ export default function Room() {
   }, [slug, socket])
 
   return (
-    <RoomStyle>
+    <RoomDisplay>
 
       <ReceiveMessageContent slug={slug} />
 
@@ -55,6 +55,6 @@ export default function Room() {
 
         <SendMessageContent slug={slug} username={username} />
       </Chat>
-    </RoomStyle>
+    </RoomDisplay>
   )
 }

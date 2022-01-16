@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Title, UserForm, ErrorMessage } from '../styles/components'
+import { Title, HomeDisplay, ErrorMessage } from '../styles/components'
 
 export default function Home() {
 
@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <UserForm onSubmit={submitUser} method="POST">
+      <HomeDisplay onSubmit={submitUser} method="POST">
         <Title>kono chat</Title>
 
         <div>
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
 
         {error ? <ErrorMessage>{error}</ErrorMessage> : null}
-      </UserForm>
+      </HomeDisplay>
     </>
   )
 }
