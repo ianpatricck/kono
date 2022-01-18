@@ -10,6 +10,7 @@ const NotFoundContainer = styled.div`
   h1 {
     font-family: 'M PLUS';
     color: white;
+    letter-spacing: 5px;
   }
 `
 

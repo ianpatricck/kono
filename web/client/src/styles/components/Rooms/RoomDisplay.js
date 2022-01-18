@@ -8,30 +8,30 @@ const RoomDisplay = styled.div`
     flex-direction: row;
     height: 10vh;
     width: 100%;
-    background-color: ${(props) => props.theme.backgroundRoomNavbar};
+    background-color: ${(props) => props.theme.colors.bgDark};
     overflow-x: scroll;
     
-    scrollbar-color: ${(props) => props.theme.background} transparent;
+    scrollbar-color: ${(props) => props.theme.colors.bgPrimary} transparent;
 
     ::-webkit-scrollbar { background-color: transparent }
     ::-webkit-scrollbar-thumb { background-color: dimgray }
 
     button {
-      background-color: rgb(50, 60, 120);
-      color: rgb(150, 150, 150);
+      background-color: ${(props) => props.theme.colors.bgPrimary};
+      color: ${(props) => props.theme.colors.clPrimary};
       border: none;
       border-radius: 5px;
       font-family: 'M PLUS';
       font-weight: bold;
-      font-size: 10pt;
+      font-size: 15pt;
       height: 50%;
       margin: 10px;
       padding: 5px;
 
       &:hover {
         cursor: pointer;
-        background-color: rgba(50, 60, 120, .5);
-        color: rgb(200, 200, 200);
+        background-color: ${(props) => props.theme.colors.hvBgPrimary};
+        color: ${(props) => props.theme.colors.hvClLight};
         transition-duration: .5s;
       }
     }

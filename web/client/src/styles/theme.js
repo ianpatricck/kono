@@ -1,29 +1,25 @@
 export const theme = {
-  background: 'rgb(48, 66, 115)',
-  title: 'white',
-  
-  buttonSuccessColor: 'white',
-  buttonSuccessBgColor: 'rgb(36, 190, 161)',
-  buttonSuccessBgColorHover: 'rgba(36, 190, 161, .6)',
+  colors: {
+    bgPrimary: '#1e1e1e',
+    bgSecondary: '#f15922',
+    bgGray: '#1a1a1a',
+    bgDark: '#1b1b1b',
+    bgLight: '#2e2e2e',
+    bgDanger: '#f91f3b',
+    bgSuccess: '#3b413d',
+    bgDim: '#15191f',
 
-  errorBackground: 'hsl(337, 66%, 54%)',
-  errorColor: 'white',
-  
-  backgroundRoomLink: 'rgb(48, 52, 93)',
-  backgroundRoomLinkHover: 'rgba(48, 52, 93, .5)',
-  
-  backgroundRoomNavbar: 'rgb(48, 65, 100)',
-  backgroundMessageArea: 'rgb(40, 50, 100)',
-  
-  buttonSendMessageBgColor: 'rgb(84, 117, 175)',
-  buttonSendMessageBgColorHover: 'rgba(84, 117, 175, .5)',
+    hvBgPrimary: '#2e2e2e',
+    hvBgSecondary: '#f15933',
+    hvBgGray: '#1f1f1f',
+    hvBgSuccess: '#4d4c4a',
 
-  messageBgColor: 'rgb(34, 51, 93)',
-  messageColor: 'white',
-  
-  authorUsernameMessageColor: 'rgb(200, 178, 180)',
-  defaultUsernameMessageColor: 'rgb(150, 178, 195)',
-  
-  timeMessageColor: 'rgb(195, 220, 219)'
-
+    clPrimary: '#f64725',
+    clSecondary: '#3b3c3a',
+    clGray: '#5a5950', 
+    clAuthor: '#C8B2B4',
+    clUsername: '#9FB2C3',
+ 
+    hvClLight: '#667a6b',
+  },
 }

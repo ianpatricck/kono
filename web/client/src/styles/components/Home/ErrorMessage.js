@@ -10,12 +10,12 @@ const slipToLeft = keyframes`
 
 const ErrorMessage = styled.span`
   margin-top: 15px;
-  padding: 5px;
-  background-color: ${(props) => props.theme.errorBackground};
-  border-radius: 2px;
+  padding: 10px;
+  background-color: ${(props) => props.theme.colors.bgDanger};
+  border-radius: 1px;
   color: white;
   font-size: 15pt;
-  font-family: M Plus;
+  font-family: Andika;
   font-weight: bold;
   animation: ${slipToLeft} .5s;
 `
