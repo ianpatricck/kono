@@ -6,7 +6,7 @@ const rooms = [
 
   {
     slug: "coffe",
-    room_name: "Coffe"
+    room_name: "Coffee"
   },
 
   {
