@@ -4,7 +4,6 @@ import { api } from '../api'
 
 import { 
   RoomLink, 
-  SelectRoomTitle, 
   MenuDisplay, 
   LoadingRooms, 
   RoomContent 
@@ -38,7 +37,7 @@ export default function Menu() {
   return (
     <MenuDisplay>
     
-      <SelectRoomTitle>SELECT ROOM</SelectRoomTitle>
+      <h1>SELECT ROOM</h1>
  
           <RoomContent>
             {!loading ? rooms.map((room, index) => (

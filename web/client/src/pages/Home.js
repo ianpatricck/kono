@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Title, HomeDisplay, ErrorMessage } from '../styles/components'
+import { HomeDisplay, ErrorMessage } from '../styles/components'
 
 export default function Home() {
 
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <HomeDisplay onSubmit={submitUser} method="POST">
-        <Title>kono chat</Title>
+        <h1>kono chat</h1>
 
         <div>
           <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
