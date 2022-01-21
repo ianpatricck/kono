@@ -12,13 +12,20 @@ export default function Room() {
   const username = localStorage.getItem('username')
   const navigate = useNavigate() 
 
+  function disconnect() { 
+    localStorage.removeItem("username")
+    navigate('/')
+    
+    window.location.reload()
+  }
+
   return (
     <RoomDisplay>
 
       <ReceiveMessageContent />
 
       <header>
-        <button onClick={() => navigate('/')}>Disconnect</button>
+        <button onClick={disconnect}>Disconnect</button>
       </header>
 
       <Chat> 
