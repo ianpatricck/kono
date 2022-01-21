@@ -1,33 +1,24 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { Chat, RoomDisplay } from '../styles/components/'
 import { Context } from '../context/AppContext'
-import { useParams, useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 import SendMessageContent from '../components/SendMessageContent'
 import ReceiveMessageContent from '../components/ReceiveMessageContent'
-
 import { MessageContainer } from '../styles/components'
 
 export default function Room() {
 
-  const { messageContent,  socket } = useContext(Context)
-
+  const { messageContent } = useContext(Context)
   const username = localStorage.getItem('username')
-  const { slug } = useParams()
-
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    socket.emit("join_room", slug) 
-  }, [slug, socket])
+  const navigate = useNavigate() 
 
   return (
     <RoomDisplay>
 
-      <ReceiveMessageContent slug={slug} />
+      <ReceiveMessageContent />
 
       <header>
-        <button onClick={() => navigate('/menu')}>Disconnect</button>
+        <button onClick={() => navigate('/')}>Disconnect</button>
       </header>
 
       <Chat> 
@@ -46,14 +37,12 @@ export default function Room() {
                 <small>{content.time}</small>
               </div>
             
-              <p>
-                {content.message}
-              </p>
+              <p>{content.message}</p>
             </MessageContainer>
           )
         })}
 
-        <SendMessageContent slug={slug} username={username} />
+        <SendMessageContent username={username} />
       </Chat>
     </RoomDisplay>
   )

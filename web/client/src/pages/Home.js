@@ -19,7 +19,7 @@ export default function Home() {
 
     localStorage.setItem("username", username)
   
-    navigate("/menu")
+    navigate("/room")
   }
 
   return (
