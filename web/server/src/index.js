@@ -18,10 +18,9 @@ const io = new Server(server, {
 })
 
 io.on("connection", (socket) => {
-  socket.on("send_message", (data) => {
-    // send message content
-  })
-
+  socket.on('send_message', (messageData) => {
+    io.emit('receive_message', messageData)
+  }) 
 })
 
 server.listen(4000, () => console.log("Server running on port 4000"))
