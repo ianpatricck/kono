@@ -7,7 +7,6 @@ import {
 import {
   Home,
   Room,
-  Menu,
   NotFound
 } from './pages'
 
@@ -16,8 +15,7 @@ export default function Routing() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />   
-        <Route path="/room/:slug" element={<Room />} /> 
-        <Route path="/menu" element={<Menu />} /> 
+        <Route path="/room" element={<Room />} /> 
         <Route path="*" element={<NotFound />} /> 
       </Routes>
     </Router>
