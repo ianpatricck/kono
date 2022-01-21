@@ -7,14 +7,19 @@ const Chat = styled.div`
   justify-content: end;
 
   nav {
-    overflow-y: scroll;
-    
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+
     scrollbar-color: dimgray;
 
     ::-webkit-scrollbar { background-color: transparent }
     ::-webkit-scrollbar-thumb { background-color: dimgray }
+  }
 
-
+  main {
+    display: flex;
+    flex-direction: column;
   }
 `
 
