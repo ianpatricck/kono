@@ -3,25 +3,22 @@ import { SendMessageForm } from '../styles/components'
 import { useState, useContext } from 'react'
 import { Context } from '../context/AppContext'
 
-function SendMessageContent({ slug, username }) {
+function SendMessageContent({ username }) {
 
-  const { socket, setMessageContent } = useContext(Context)
+  const { socket } = useContext(Context)
   const [message, setMessage] = useState('')
 
   async function sendMessage(e) {
     e.preventDefault()
-
     e.target.reset()
 
     if (message !== "") {
       const messageData = {
-        room: slug,
         from: username,
         message: message,
         time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
       }
 
-      setMessageContent((prev) => [...prev, messageData])
       await socket.emit("send_message", messageData) 
     }
   }
@@ -34,8 +31,7 @@ function SendMessageContent({ slug, username }) {
       </div>
     </SendMessageForm>
 
-)
-
+  )
 }
 
 export default SendMessageContent
