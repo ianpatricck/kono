@@ -30,27 +30,27 @@ export default function Room() {
 
       <Chat>
         <nav>
-    
-          {messageContent.map((content, index) => {
-            return (
-              <MessageContainer key={index}>
-                <div>
-                  {content.from === username ? (
-                    <span id="my_user">
-                      {content.from}
-                    </span>) : (
-                      <span id="other_user">
+          <main>
+            {messageContent.map((content, index) => {
+              return (
+                <MessageContainer key={index}>
+                  <div>
+                    {content.from === username ? (
+                      <span id="my_user">
                         {content.from}
-                      </span>)}
-              
-                  <small>{content.time}</small>
-                </div>
-              
-                <p>{content.message}</p>
-              </MessageContainer>
-            )
-          })}
-
+                      </span>) : (
+                        <span id="other_user">
+                          {content.from}
+                        </span>)}
+                
+                    <small>{content.time}</small>
+                  </div>
+                
+                  <p>{content.message}</p>
+                </MessageContainer>
+              )
+            })}
+          </main>
         </nav>
     
         <SendMessageContent username={username} />
