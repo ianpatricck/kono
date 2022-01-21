@@ -28,27 +28,31 @@ export default function Room() {
         <button onClick={disconnect}>Disconnect</button>
       </header>
 
-      <Chat> 
-        {messageContent.map((content, index) => {
-          return (
-            <MessageContainer key={index}>
-              <div>
-                {content.from === username ? (
-                  <span id="my_user">
-                    {content.from}
-                  </span>) : (
-                    <span id="other_user">
+      <Chat>
+        <nav>
+    
+          {messageContent.map((content, index) => {
+            return (
+              <MessageContainer key={index}>
+                <div>
+                  {content.from === username ? (
+                    <span id="my_user">
                       {content.from}
-                    </span>)}
-            
-                <small>{content.time}</small>
-              </div>
-            
-              <p>{content.message}</p>
-            </MessageContainer>
-          )
-        })}
+                    </span>) : (
+                      <span id="other_user">
+                        {content.from}
+                      </span>)}
+              
+                  <small>{content.time}</small>
+                </div>
+              
+                <p>{content.message}</p>
+              </MessageContainer>
+            )
+          })}
 
+        </nav>
+    
         <SendMessageContent username={username} />
       </Chat>
     </RoomDisplay>
