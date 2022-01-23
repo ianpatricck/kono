@@ -23,8 +23,11 @@ export default function App() {
   } else {
       return (
         <ThemeProvider theme={theme}>
-            <NavigationContainer initialRouteName="Home">
-              <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <NavigationContainer>
+              <Stack.Navigator 
+                screenOptions={{ headerShown: false }}
+                initialRouteName="Home"
+              >
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Room" component={Room} />
               </Stack.Navigator>
