@@ -11,7 +11,7 @@ const HomeDisplay = styled.View`
 const Title = styled.Text`
   color: ${(props) => props.theme.colors.clPrimary};
   font-family: 'Russo One';
-  font-size: 30;
+  font-size: 30px;
 `
 
 const FormView = styled.View`
@@ -48,12 +48,24 @@ const SignInText = styled.Text`
   text-align: center;
 `
 
+const ErrorMessageText = styled.Text`
+  margin-top: 15px;
+  padding: 10px;
+  background-color: ${(props) => props.theme.colors.bgDanger};
+  border-radius: 1px;
+  color: white;
+  font-size: 15px;
+  font-family: 'Andika';
+  font-weight: bold;
+`
+
 export {
   HomeDisplay,
   Title,
   FormView,
   UserInput,
   SignInButton,
-  SignInText
+  SignInText,
+  ErrorMessageText
 }
 
