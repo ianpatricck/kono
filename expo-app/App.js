@@ -6,19 +6,31 @@ import Room from './screens/Room'
 
 import { theme } from './styles/theme'
 import { ThemeProvider } from 'styled-components'
+import { useFonts } from 'expo-font'
 
 const Stack = createNativeStackNavigator()
 
 export default function App() {
-  return (
-    <ThemeProvider theme={theme}>
-        <NavigationContainer initialRouteName="Home">
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Room" component={Room} />
-          </Stack.Navigator>
-        </NavigationContainer>
-    </ThemeProvider>
-  );
+  
+  const [fontsLoaded] = useFonts({
+    'Andika': require('./fonts/Andika.ttf'),
+    'M Plus': require('./fonts/MPlus.ttf'),
+    'Russo One': require('./fonts/RussoOne.ttf'),
+  })
+
+  if (!fontsLoaded) {
+    return <></>
+  } else {
+      return (
+        <ThemeProvider theme={theme}>
+            <NavigationContainer initialRouteName="Home">
+              <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Room" component={Room} />
+              </Stack.Navigator>
+            </NavigationContainer>
+        </ThemeProvider>
+      );
+  }
 }
 
