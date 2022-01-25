@@ -5,10 +5,6 @@ This is a FullStack Application test
 
 ## CHAT SERVICE
 
-> Application under development
-
 #### Technologies
 
-- Electron
-- React
-- Expo
+React + Electron + Socket.io
