@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary); 
+}
+
+@font-face {
+  font-family: 'Russo One';
+  src: url(../assets/fonts/russo-one.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'M Plus';
+  src: url(../assets/fonts/m-plus.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url(../assets/fonts/andika.woff2) format('woff2');
+  font-style: normal;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.home__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.home__title {
+  color: var(--cl-primary);
+  font-family: 'Russo One';
+  font-size: 30pt;
+}
+
+.home_input__username {
+  border: .1rem solid black;
+  border-radius: 4px;
+  color: white;
+  padding: 15px;
+  margin: 15px;
+  font-size: 15pt;
+  background-color: var(--bg-gray);
+}
+
+.home_input__username:focus {
+  outline: none
+}
+
+.home_input__username::placeholder {
+  color: gray;
+}
+
+.home_submit__username {
+  background-color: var(--bg-secondary);
+  color: white;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  width: 40%; 
+  border: none;
+  padding: 13px;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.home_submit__username:hover {
+  background-color: var(--hv-bg-secondary);
+  cursor: pointer;
+}
+
+@keyframes slipToLeft {
+  from {
+    margin-left: 35px;
+  } to {
+    margin-left: 0;
+  }
+}
+
+.home__error {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--bg-danger);
+  border-radius: 1px;
+  color: white;
+  font-size: 15pt;
+  font-family: Andika;
+  font-weight: bold;
+  animation: slipToLeft .5s;
+}
