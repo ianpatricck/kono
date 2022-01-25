@@ -2,12 +2,24 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+
+    <title>Kono</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="home__content">
+      <h1 class="home__title">Kono</h1>
+
+      <form action="" method="POST" class="home__form">
+        <input type="text" placeholder="Username" class="home_input__username"/>
+        <button type="submit" class="home_submit__username">Enter</button>
+      </form>
+
+      <p class="home__error">Empty username</p>
+    </div>
   </body>
 </html>
