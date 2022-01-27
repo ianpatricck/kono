@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const Store = require('electron-store')
 
 /*
  * electron-reload will update window for each change
@@ -32,9 +33,14 @@ const createWindow = () => {
 
   win.maximize()
   win.loadFile('./html/index.html')
-
-  // win.webContents.openDevTools()
 }
+
+/*
+ * Place where the username will be saved
+ *
+ */
+
+const UserStore = new Store()
 
 /*
  * Main process that will receive username sent from 
@@ -42,9 +48,7 @@ const createWindow = () => {
  *
  */
 
-ipcMain.on('username', (event, data) => {
-  console.log(data)
-})
+ipcMain.on('username', (event, username) => UserStore.set('username', username))
 
 
 /*
