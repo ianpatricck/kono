@@ -101,4 +101,5 @@ body {
   font-family: Andika;
   font-weight: bold;
   animation: slipToLeft .5s;
+  display: none;
 }
