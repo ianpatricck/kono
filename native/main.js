@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const Store = require('electron-store')
+const { io } = require('socket.io-client')
 
 /*
  * electron-reload will update window for each change
@@ -43,12 +44,35 @@ const createWindow = () => {
 const UserStore = new Store()
 
 /*
- * Main process that will receive username sent from 
- * ipcRenderer 'username'
+ * Socket.io connection
  *
  */
 
-ipcMain.on('username', (event, username) => UserStore.set('username', username))
+const socket = io.connect("http://localhost:4000")
+
+/*
+ * Main process that will receive user data sent from 
+ * ipcRenderer 'user'
+ *
+ */
+
+ipcMain.on('user', (event, user) => UserStore.set('username', username))
+
+/*
+ * Process that will receive message and send to server-side
+ *
+ */
+
+ipcMain.on('send_message', (event, message) => {
+
+  const messageData = {
+    from: UserStore.get('username'),
+    message: message,
+    time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+  }
+
+  socket.emit("send_message", messageData) 
+})
 
 
 /*
