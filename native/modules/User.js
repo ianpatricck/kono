@@ -9,14 +9,29 @@ const { ipcRenderer } = require('electron')
 const submitUsername = (e) => {
   e.preventDefault()
 
-  const username = document.getElementById("home_input__username").value
+  username = document.getElementById("home_input__username").value
 
   if (username === "" || username === undefined) {
     document.querySelector(".home__error").innerText = 'Empty username'
     document.querySelector(".home__error").style.display = 'block'
-    
+
     return 0
   }
-
-  ipcRenderer.send('username', username)
+  
+  ipcRenderer.send('username', username)  
+ 
+  window.location.href = '../html/room.html'
 }
+
+const sendMessage = async (e) => {
+  e.preventDefault()
+
+  message = document.getElementById("message__input").value
+
+  if (message !== "" || message !== undefined) {
+    ipcRenderer.send('send_message', message)
+  }
+
+  document.getElementById("message__input").value = ""
+}
+
