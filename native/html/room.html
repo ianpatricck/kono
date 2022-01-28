@@ -2,13 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    
+
     <title>Kono - Room</title>
-    
+
     <link rel="stylesheet" type="text/css" href="../styles/theme.css" />
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
   </head>
   <body>
-    <h1>Room</h1>
-  </body>
+    <header class="room_header">
+      <button class="room_header__button">Disconnect</button>
+    </header>
+
+    <div class="room_chat">
+      <nav class="room_chat__overflow">
+        <div class="room_chat__reverse-content">
+          <div class="room_chat_message-container">
+            <section class="room_chat_user-section">
+              <span>Ian Patrick</span>
+              <small>19:00</small>
+            </section>
+
+            <p class="room_chat_message-content">
+            Hello World
+            </p>
+          </div>
+        </div>
+      </nav>
+
+      <form method="POST">
+        <div class="room_chat_input-container">
+          <input type="text" placeholder="Type hello :D" />
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
 </html>
