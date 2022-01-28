@@ -103,3 +103,136 @@ body {
   animation: slipToLeft .5s;
   display: none;
 }
+
+/* Room styles */
+
+.room_header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+  background-color: var(--bg-dark); 
+}
+
+.room_header__button {
+  background-color: var(--bg-primary);
+  color: var(--cl-primary);
+  border: none;
+  border-radius: 5px;
+  font-family: 'M PLUS';
+  font-weight: bold;
+  font-size: 15pt;
+  height: 50%;
+  margin: 10px;
+  padding: 5px; 
+}
+
+.room_header__button:hover {
+  cursor: pointer;
+  background-color: var(--hv-bg-primary);
+  color: var(--hv-cl-light);
+  transition-duration: .5s;
+}
+
+.room_chat {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.room_chat__overflow {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+  scrollbar-color: dimgray;
+
+  ::-webkit-scrollbar { background-color: transparent }
+  ::-webkit-scrollbar-thumb { background-color: dimgray }
+
+}
+
+.room_chat__reverse-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.room_chat_message-container {
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 20px;
+  width: 80%;
+  align-self: center;
+}
+
+.room_chat_user-section {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 5px 5px 10px;
+}
+
+.room_chat_user-section span {
+  font-family: 'M PLUS';
+  margin: 5px;
+  font-size: 20px;
+  color: var(--cl-author);
+} 
+
+.room_chat_user-section small {
+  font-family: 'M PLUS';
+  color: var(--cl-gray);
+} 
+
+.room_chat_message-content {
+  font-family: 'andika';
+  padding: 15px;
+  background-color: var(--bg-dark);
+  color: white;
+  font-size: 20px;
+}
+
+.room_chat form {
+  display: flex;
+  justify-content: center;
+}
+
+.room_chat_input-container {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;  
+}
+
+.room_chat_input-container input {
+  background-color: var(--bg-light);
+  border: none;
+  width: 75%;
+  resize: none; 
+  font-size: 15pt;
+  color: white;
+  padding: 1em;
+  border-radius: 20px 0 0 20px;
+  font-family: 'Andika';
+}
+
+.room_chat_input-container input:focus {
+  outline: none
+}
+
+.room_chat_input-container button {
+  width: 25%;
+  border: none;
+  background-color: var(--bg-success);
+  color: white;
+  border-radius: 0 20px 20px 0; 
+  font-size: 15pt;
+
+}
+
+.room_chat_input-container button:hover {
+  cursor: pointer;
+  background-color: var(--hv-bg-success);
+}
+
+
