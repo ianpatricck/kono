@@ -7,32 +7,32 @@
 
     <link rel="stylesheet" type="text/css" href="../styles/theme.css" />
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+
+    <script src="../modules/User.js"></script>
+    <script src="../modules/LoadMessages.js"></script>
   </head>
   <body>
     <header class="room_header">
-      <button class="room_header__button">Disconnect</button>
+      <button 
+            class="room_header__button"
+            onclick="window.location.href = './index.html'">
+        Disconnect
+      </button>
     </header>
 
     <div class="room_chat">
       <nav class="room_chat__overflow">
         <div class="room_chat__reverse-content">
           <div class="room_chat_message-container">
-            <section class="room_chat_user-section">
-              <span>Ian Patrick</span>
-              <small>19:00</small>
-            </section>
-
-            <p class="room_chat_message-content">
-            Hello World
-            </p>
+            <!-- Messages content -->
           </div>
         </div>
       </nav>
 
       <form method="POST">
         <div class="room_chat_input-container">
-          <input type="text" placeholder="Type hello :D" />
-          <button type="submit">Send</button>
+          <input type="text" placeholder="Type hello :D" id="message__input" />
+          <button type="submit" onclick="sendMessage(event)">Send</button>
         </div>
       </form>
     </div>
