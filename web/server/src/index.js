@@ -10,12 +10,23 @@ app.use(express.json())
 
 const server = http.createServer(app)
 
+/*
+ * Configure server instance with socket.io and with CORS
+ *
+ */
+
 const io = new Server(server, {
   cors: {
     origin: 'http://localhost:3000',
     methods: ['GET, POST']
   } 
 })
+
+/*
+ * Event that listens until a message is received 
+ * and then sent back
+ *
+ */
 
 io.on("connection", (socket) => {
   socket.on('send_message', (messageData) => {

@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "electron ."
+  },
+  "name": "native",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "electron-store": "^8.0.1",
+    "socket.io-client": "^4.4.1"
+  }
+}

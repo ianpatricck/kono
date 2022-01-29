@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary); 
+}
+
+@font-face {
+  font-family: 'Russo One';
+  src: url(../assets/fonts/russo-one.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'M Plus';
+  src: url(../assets/fonts/m-plus.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Andika';
+  src: url(../assets/fonts/andika.woff2) format('woff2');
+  font-style: normal;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.home__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.home__title {
+  color: var(--cl-primary);
+  font-family: 'Russo One';
+  font-size: 30pt;
+}
+
+.home_input__username {
+  border: .1rem solid black;
+  border-radius: 4px;
+  color: white;
+  padding: 15px;
+  margin: 15px;
+  font-size: 15pt;
+  background-color: var(--bg-gray);
+}
+
+.home_input__username:focus {
+  outline: none
+}
+
+.home_input__username::placeholder {
+  color: gray;
+}
+
+.home_submit__username {
+  background-color: var(--bg-secondary);
+  color: white;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  width: 40%; 
+  border: none;
+  padding: 13px;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.home_submit__username:hover {
+  background-color: var(--hv-bg-secondary);
+  cursor: pointer;
+}
+
+@keyframes slipToLeft {
+  from {
+    margin-left: 35px;
+  } to {
+    margin-left: 0;
+  }
+}
+
+.home__error {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--bg-danger);
+  border-radius: 1px;
+  color: white;
+  font-size: 15pt;
+  font-family: Andika;
+  font-weight: bold;
+  animation: slipToLeft .5s;
+  display: none;
+}
+
+/* Room styles */
+
+.room_header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  width: 100%;
+  background-color: var(--bg-dark); 
+}
+
+.room_header__button {
+  background-color: var(--bg-primary);
+  color: var(--cl-primary);
+  border: none;
+  border-radius: 5px;
+  font-family: 'M PLUS';
+  font-weight: bold;
+  font-size: 15pt;
+  height: 50%;
+  margin: 10px;
+  padding: 5px; 
+}
+
+.room_header__button:hover {
+  cursor: pointer;
+  background-color: var(--hv-bg-primary);
+  color: var(--hv-cl-light);
+  transition-duration: .5s;
+}
+
+.room_chat {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.room_chat__overflow {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+  scrollbar-color: dimgray;
+
+  ::-webkit-scrollbar { background-color: transparent }
+  ::-webkit-scrollbar-thumb { background-color: dimgray }
+
+}
+
+.room_chat__reverse-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.room_chat_message-container {
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 20px;
+  width: 80%;
+  align-self: center;
+}
+
+.room_chat_user-section {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 5px 5px 10px;
+}
+
+.room_chat_user-section span {
+  font-family: 'M PLUS';
+  margin: 5px;
+  font-size: 20px;
+  color: var(--cl-author);
+} 
+
+.room_chat_user-section small {
+  font-family: 'M PLUS';
+  color: var(--cl-gray);
+} 
+
+.room_chat_message-content {
+  font-family: 'andika';
+  padding: 15px;
+  background-color: var(--bg-dark);
+  color: white;
+  font-size: 20px;
+}
+
+.room_chat form {
+  display: flex;
+  justify-content: center;
+}
+
+.room_chat_input-container {
+  display: flex;
+  width: 75%;
+  justify-content: space-between;  
+}
+
+.room_chat_input-container input {
+  background-color: var(--bg-light);
+  border: none;
+  width: 75%;
+  resize: none; 
+  font-size: 15pt;
+  color: white;
+  padding: 1em;
+  border-radius: 20px 0 0 20px;
+  font-family: 'Andika';
+}
+
+.room_chat_input-container input:focus {
+  outline: none
+}
+
+.room_chat_input-container button {
+  width: 25%;
+  border: none;
+  background-color: var(--bg-success);
+  color: white;
+  border-radius: 0 20px 20px 0; 
+  font-size: 15pt;
+
+}
+
+.room_chat_input-container button:hover {
+  cursor: pointer;
+  background-color: var(--hv-bg-success);
+}
+
+
