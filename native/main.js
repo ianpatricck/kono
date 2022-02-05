@@ -56,7 +56,7 @@ const socket = io.connect("http://localhost:4000")
  *
  */
 
-ipcMain.on('user', (event, user) => UserStore.set('username', username))
+ipcMain.on('user', (event, username) => UserStore.set('username', username))
 
 /*
  * Process that will receive message and send to server-side
