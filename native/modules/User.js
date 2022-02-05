@@ -11,15 +11,15 @@ const submitUsername = (e) => {
 
   username = document.getElementById("home_input__username").value
 
-  if (username === "" || username === undefined) {
+  if (username === "" || username === undefined || username == null) {
     document.querySelector(".home__error").innerText = 'Empty username'
     document.querySelector(".home__error").style.display = 'block'
 
     return 0
   }
-  
+
   ipcRenderer.send('username', username)  
- 
+
   window.location.href = '../html/room.html'
 }
 
@@ -27,10 +27,13 @@ const sendMessage = async (e) => {
   e.preventDefault()
 
   message = document.getElementById("message__input").value
+  message = message.trim()
 
-  if (message !== "" || message !== undefined) {
-    ipcRenderer.send('send_message', message)
+  if (message === "" || message == undefined || message == null) { 
+    return
   }
+
+  ipcRenderer.send('send_message', message)
 
   document.getElementById("message__input").value = ""
 }
