@@ -16,10 +16,10 @@ const server = http.createServer(app)
  */
 
 const io = new Server(server, {
-  cors: {
-    origin: 'http://localhost:3000',
-    methods: ['GET, POST']
-  } 
+    cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET, POST']
+    } 
 })
 
 /*
@@ -29,9 +29,9 @@ const io = new Server(server, {
  */
 
 io.on("connection", (socket) => {
-  socket.on('send_message', (messageData) => {
-    io.emit('receive_message', messageData)
-  }) 
+    socket.on('send_message', (messageData) => {
+        io.emit('receive_message', messageData)
+    }) 
 })
 
 server.listen(4000, () => console.log("Server running on port 4000"))
