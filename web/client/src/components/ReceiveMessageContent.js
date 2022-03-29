@@ -3,18 +3,18 @@ import { Context } from '../context/AppContext'
 
 function ReceiveMessageContent() {
 
-  const { socket, setMessageContent } = useContext(Context)
-  
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageContent((prev) => [...prev, data])
-    })
+    const { socket, setMessageContent } = useContext(Context)
 
-  }, [socket, setMessageContent])
+    useEffect(() => {
+        socket.on("receive_message", (data) => {
+            setMessageContent((prev) => [...prev, data])
+        })
 
-  return (
-    <></>
-  )
+    }, [socket, setMessageContent])
+
+    return (
+        <></>
+    )
 }
 
 export default ReceiveMessageContent

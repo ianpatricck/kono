@@ -5,35 +5,35 @@ import { HomeDisplay, ErrorMessage } from '../styles/components'
 
 export default function Home() {
 
-  const [username, setUsername] = useState("")
-  const [error, setError] = useState("")
-  
-  const navigate = useNavigate()
+    const [username, setUsername] = useState("")
+    const [error, setError] = useState("")
 
-  function submitUser(e) {
-    e.preventDefault()
+    const navigate = useNavigate()
 
-    if (username === "") {
-      return setError("Empty username")
+    function submitUser(e) {
+        e.preventDefault()
+
+        if (username === "") {
+            return setError("Empty username")
+        }
+
+        localStorage.setItem("username", username)
+
+        navigate("/room")
     }
 
-    localStorage.setItem("username", username)
-  
-    navigate("/room")
-  }
+    return (
+        <>
+            <HomeDisplay onSubmit={submitUser} method="POST">
+                <h1>kono chat</h1>
 
-  return (
-    <>
-      <HomeDisplay onSubmit={submitUser} method="POST">
-        <h1>kono chat</h1>
+                <div>
+                    <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+                    <button type="submit">Enter</button>
+                </div>
 
-        <div>
-          <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-          <button type="submit">Enter</button>
-        </div>
-
-        {error ? <ErrorMessage>{error}</ErrorMessage> : null}
-      </HomeDisplay>
-    </>
-  )
+                {error ? <ErrorMessage>{error}</ErrorMessage> : null}
+            </HomeDisplay>
+        </>
+    )
 }

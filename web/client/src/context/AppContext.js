@@ -6,22 +6,22 @@ const Context = createContext()
 const socket = io.connect("http://localhost:4000")
 
 function ApplicationProvider({ children }) { 
- 
-  const [messageContent, setMessageContent] = useState([])
 
-  return (
-    <Context.Provider value={
-          { 
-            socket, 
-            messageContent, 
-            setMessageContent,
-          }
-    }>
+    const [messageContent, setMessageContent] = useState([])
 
-      { children }
+    return (
+        <Context.Provider value={
+            { 
+                socket, 
+                messageContent, 
+                setMessageContent,
+            }
+            }>
 
-    </Context.Provider>
-  )
+            { children }
+
+        </Context.Provider>
+    )
 }
 
 export { Context, ApplicationProvider }

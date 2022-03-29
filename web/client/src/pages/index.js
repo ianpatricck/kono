@@ -3,7 +3,7 @@ import Room from './Room'
 import NotFound from './NotFound'
 
 export {
-  Home,
-  Room,
-  NotFound
+    Home,
+    Room,
+    NotFound
 }

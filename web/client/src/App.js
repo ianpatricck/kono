@@ -7,13 +7,13 @@ import Routing from './routes'
 
 
 export default function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <ApplicationProvider>
-        <Routing/> 
-      </ApplicationProvider>
-    </ThemeProvider>
-  )
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <ApplicationProvider>
+                <Routing/> 
+            </ApplicationProvider>
+        </ThemeProvider>
+    )
 }
 
