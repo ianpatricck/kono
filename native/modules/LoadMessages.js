@@ -10,30 +10,30 @@ var messages = []
  */
 
 socket.on("receive_message", (data) => {
-  messages.push(data)
+    messages.push(data)
 
-  let userSection = document.createElement("div")
-  userSection.className += "room_chat_user-section"
+    let userSection = document.createElement("div")
+    userSection.className += "room_chat_user-section"
 
-  let username = document.createElement("span")
-  let time = document.createElement("small")
+    let username = document.createElement("span")
+    let time = document.createElement("small")
 
-  let messageContent = document.createElement("p")
-  messageContent.className += "room_chat_message-content"
+    let messageContent = document.createElement("p")
+    messageContent.className += "room_chat_message-content"
 
-  messages.map(content => {
+    messages.map(content => {
 
-    document.querySelector(".room_chat_message-container").appendChild(userSection)
+        document.querySelector(".room_chat_message-container").appendChild(userSection)
 
-    userSection.appendChild(username)
-    userSection.appendChild(time)
+        userSection.appendChild(username)
+        userSection.appendChild(time)
 
-    document.querySelector(".room_chat_message-container").appendChild(messageContent)
+        document.querySelector(".room_chat_message-container").appendChild(messageContent)
 
-    username.innerText = content.from
-    time.innerText = content.time
-    messageContent.innerText = content.message
-  })
+        username.innerText = content.from
+        time.innerText = content.time
+        messageContent.innerText = content.message
+    })
 })
 
 

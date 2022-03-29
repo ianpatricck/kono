@@ -8,7 +8,7 @@ const { io } = require('socket.io-client')
  */
 
 require('electron-reload')(__dirname, {
-  electron: require(`${__dirname}/node_modules/electron`)
+    electron: require(`${__dirname}/node_modules/electron`)
 })
 
 /*
@@ -18,22 +18,22 @@ require('electron-reload')(__dirname, {
  */
 
 const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 1200,
-    height: 900,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  })
+    const win = new BrowserWindow({
+        width: 1200,
+        height: 900,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    })
 
-  /*
-   * Load index HTML file and open the dev tools window
-   *
-   */
+    /*
+     * Load index HTML file and open the dev tools window
+     *
+     */
 
-  win.maximize()
-  win.loadFile('./html/index.html')
+    win.maximize()
+    win.loadFile('./html/index.html')
 }
 
 /*
@@ -65,13 +65,13 @@ ipcMain.on('user', (event, username) => UserStore.set('username', username))
 
 ipcMain.on('send_message', (event, message) => {
 
-  const messageData = {
-    from: UserStore.get('username'),
-    message: message,
-    time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
-  }
+    const messageData = {
+        from: UserStore.get('username'),
+        message: message,
+        time: new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
+    }
 
-  socket.emit("send_message", messageData) 
+    socket.emit("send_message", messageData) 
 })
 
 
@@ -81,6 +81,6 @@ ipcMain.on('send_message', (event, message) => {
  */
 
 app.whenReady().then(() => {
-  createWindow()
+    createWindow()
 })
 

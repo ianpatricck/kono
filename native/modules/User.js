@@ -7,34 +7,34 @@ const { ipcRenderer } = require('electron')
  */
 
 const submitUsername = (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  username = document.getElementById("home_input__username").value
+    username = document.getElementById("home_input__username").value
 
-  if (username === "" || username === undefined || username == null) {
-    document.querySelector(".home__error").innerText = 'Empty username'
-    document.querySelector(".home__error").style.display = 'block'
+    if (username === "" || username === undefined || username == null) {
+        document.querySelector(".home__error").innerText = 'Empty username'
+        document.querySelector(".home__error").style.display = 'block'
 
-    return 0
-  }
+        return 0
+    }
 
-  ipcRenderer.send('username', username)  
+    ipcRenderer.send('username', username)  
 
-  window.location.href = '../html/room.html'
+    window.location.href = '../html/room.html'
 }
 
 const sendMessage = async (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  message = document.getElementById("message__input").value
-  message = message.trim()
+    message = document.getElementById("message__input").value
+    message = message.trim()
 
-  if (message === "" || message == undefined || message == null) { 
-    return
-  }
+    if (message === "" || message == undefined || message == null) { 
+        return
+    }
 
-  ipcRenderer.send('send_message', message)
+    ipcRenderer.send('send_message', message)
 
-  document.getElementById("message__input").value = ""
+    document.getElementById("message__input").value = ""
 }
 

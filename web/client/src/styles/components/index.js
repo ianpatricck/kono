@@ -8,11 +8,11 @@ import MessageContainer from './Rooms/MessageContainer'
 import NotFoundContainer from './NotFound'
 
 export {
-  HomeDisplay,
-  ErrorMessage,
-  SendMessageForm,
-  RoomDisplay,
-  Chat,
-  MessageContainer,
-  NotFoundContainer
+    HomeDisplay,
+    ErrorMessage,
+    SendMessageForm,
+    RoomDisplay,
+    Chat,
+    MessageContainer,
+    NotFoundContainer
 }
