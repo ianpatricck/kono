@@ -3,7 +3,7 @@ This is a FullStack Application test
 
 ---
 
-## CHAT SERVICE
+## Chat service
 
 #### Technologies
 
@@ -14,14 +14,14 @@ React + Electron + Socket.io
 - Start server
 
 ```
-$ cd web/server
+$ cd server-side
 $ yarn install && yarn start
 ```
 
 - Start React app
 
 ```
-$ cd web/client
+$ cd website
 $ yarn install && yarn start
 ```
 
