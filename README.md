@@ -7,7 +7,7 @@ This is a FullStack Application test
 
 #### Technologies
 
-React + Electron + Socket.io
+React & Electron
 
 #### How to use
 
