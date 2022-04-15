@@ -26,8 +26,6 @@ class CreateUserUseCase {
         }
 
         await this.userProvider.create(data);
-
-        return data;
     }
 }
 
