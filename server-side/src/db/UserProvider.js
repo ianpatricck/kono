@@ -17,13 +17,13 @@ class UserProvider {
 
     emailIsValid(email) {
 
-        const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-        
-        if (email !== '' && email.match(regex)) {
-            return true;
-        } else{
-            return false;
-        }
+        var returned = null;
+
+        const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/; 
+
+        email !== '' && email.match(regex) ? returned = true : returned = false;
+
+        return returned;
     }
 
     create(data) {
