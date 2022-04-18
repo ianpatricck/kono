@@ -29,9 +29,9 @@ class UserProvider {
                 email: email,
                 password: hash
             }).then(() => {
-                console.log("User was created");
+                return true;
             }).catch((err) => {
-                console.error(err);
+                return false;
             })
         });
 
