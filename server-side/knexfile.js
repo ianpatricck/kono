@@ -1,11 +1,13 @@
+require("dotenv").config();
+
 module.exports = {
 
     development: {
         client: 'mysql2',
         connection: {
-            database: 'kono',
-            user:     'patrick',
-            password: 'patrickpass'
+            database: process.env.DB_NAME,
+            user:     process.env.DB_USER,
+            password: process.env.DB_PASS
         },
         pool: {
             min: 2,
@@ -14,26 +16,6 @@ module.exports = {
         migrations: {
             tableName: 'kono_migrations',
             directory: __dirname + '/src/db/migrations'
-        },
-        seeds: {
-            directory: __dirname + '/src/db/seeds'
-        }
-    },
-
-    production: {
-        client: 'postgresql',
-        connection: {
-            database: 'my_db',
-            user:     'username',
-            password: 'password'
-        },
-        pool: {
-            min: 2,
-            max: 10
-        },
-        migrations: {
-            tableName: 'knex_migrations'
-        }
+        } 
     }
-
 };
