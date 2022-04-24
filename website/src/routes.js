@@ -6,6 +6,7 @@ import {
 
 import {
     Home,
+    SignUp,
     Room,
     NotFound
 } from './pages'
@@ -15,6 +16,7 @@ export default function Routing() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />   
+                <Route path="/signup" element={<SignUp />} />   
                 <Route path="/room" element={<Room />} /> 
                 <Route path="*" element={<NotFound />} /> 
             </Routes>
