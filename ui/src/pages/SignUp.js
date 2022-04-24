@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HomeDisplay, StyledLink, ErrorMessage } from '../styles/components';
+import { HomeDisplay, StyledLink, ErrorMessage, SmoothPage } from '../styles/components';
 import { api } from "../api";
 
 export default function SignUp() {
@@ -12,7 +12,6 @@ export default function SignUp() {
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
-
 
     function isEmail(email) {
         let regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -54,21 +53,23 @@ export default function SignUp() {
 
     return (
         <>
-            <HomeDisplay onSubmit={submitRegisterData} method="POST">
-                <h1>kono chat</h1>
+            <SmoothPage>
+                <HomeDisplay onSubmit={submitRegisterData} method="POST">
+                    <h1>kono chat</h1>
 
-                <div>
-                    <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
-                    <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                    <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                    <input type="password" placeholder="Confirm password" onChange={(e) => setPasswordConfirm(e.target.value)} />
-                    <button type="submit">Create</button>
-                </div>
+                    <div>
+                        <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" placeholder="Confirm password" onChange={(e) => setPasswordConfirm(e.target.value)} />
+                        <button type="submit">Create</button>
+                    </div>
 
-                <StyledLink to="/" style={{ marginTop: "40px" }}>Back to Sign In</StyledLink>
+                    <StyledLink to="/" style={{ marginTop: "40px" }}>Back to Sign In</StyledLink>
 
-                {error ? <ErrorMessage>{error}</ErrorMessage> : null}
-            </HomeDisplay>
+                    {error ? <ErrorMessage>{error}</ErrorMessage> : null}
+                </HomeDisplay>
+            </SmoothPage>
 
         </>
     )

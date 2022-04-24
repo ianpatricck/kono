@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HomeDisplay, StyledLink, ErrorMessage } from '../styles/components';
+import { HomeDisplay, StyledLink, ErrorMessage, SmoothPage } from '../styles/components';
 import { api } from "../api";
 
 export default function Home() {
@@ -31,19 +31,21 @@ export default function Home() {
 
     return (
         <>
-            <HomeDisplay onSubmit={submitLoginData} method="POST">
-                <h1>kono chat</h1>
+            <SmoothPage>
+                <HomeDisplay onSubmit={submitLoginData} method="POST">
+                    <h1>kono chat</h1>
 
-                <div>
-                    <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-                    <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                    <button type="submit">Enter</button>
-                </div>
+                    <div>
+                        <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                        <button type="submit">Enter</button>
+                    </div>
 
-                <StyledLink to="/signup" style={{ marginTop: "40px" }}>Sign Up</StyledLink>
+                    <StyledLink to="/signup" style={{ marginTop: "40px" }}>Sign Up</StyledLink>
 
-                {error ? <ErrorMessage>{error}</ErrorMessage> : null}
-            </HomeDisplay>
+                    {error ? <ErrorMessage>{error}</ErrorMessage> : null}
+                </HomeDisplay>
+            </SmoothPage>
         </>
     )
 };
