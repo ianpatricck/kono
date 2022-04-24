@@ -1,26 +1,28 @@
-import styled from 'styled-components'
+import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
 const HomeDisplay = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
 
-  h1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 70vh;
+
+h1 {
     color: ${(props) => props.theme.colors.clPrimary};
     font-family: 'Russo One';
     font-size: 30pt;
-  }
+}
 
-  div {
+div {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-  }
+}
 
-  input {
+input {
     border: none;
     border: .1rem solid black;
     border-radius: 4px;
@@ -29,17 +31,17 @@ const HomeDisplay = styled.form`
     margin: 15px;
     font-size: 15pt;
     background-color: ${(props) => props.theme.colors.bgGray};
-    
+
     &:focus {
-      outline: none;
+        outline: none;
     }
-  }
+}
 
-  input::placeholder {
+input::placeholder {
     color: gray;
-  }
+}
 
-  button {
+button {
     background-color: ${(props) => props.theme.colors.bgSecondary};
     color: white;
     font-family: Arial;
@@ -52,10 +54,27 @@ const HomeDisplay = styled.form`
     border-radius: 5px;
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.hvBgSecondary};
-      cursor: pointer;
+        background-color: ${(props) => props.theme.colors.hvBgSecondary};
+        cursor: pointer;
     }
-  } 
+}
+
 `
 
-export default HomeDisplay
+const StyledLink = styled(Link)`
+
+color: white;
+font-family: Andika;
+font-size: 20px;
+text-decoration: none;
+
+&:hover {
+    color: ${(props) => props.theme.colors.clAuthor};
+}
+
+`
+
+export {
+    HomeDisplay,
+    StyledLink
+};

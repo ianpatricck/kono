@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HomeDisplay, ErrorMessage } from '../styles/components';
+import { HomeDisplay, StyledLink, ErrorMessage } from '../styles/components';
 import { api } from "../api";
 
 export default function Home() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
@@ -39,6 +39,8 @@ export default function Home() {
                     <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                     <button type="submit">Enter</button>
                 </div>
+
+                <StyledLink to="/signup" style={{ marginTop: "40px" }}>Sign Up</StyledLink>
 
                 {error ? <ErrorMessage>{error}</ErrorMessage> : null}
             </HomeDisplay>

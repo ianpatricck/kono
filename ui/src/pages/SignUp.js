@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { HomeDisplay, ErrorMessage } from '../styles/components';
+import { HomeDisplay, StyledLink, ErrorMessage } from '../styles/components';
 import { api } from "../api";
 
 export default function SignUp() {
@@ -16,7 +16,7 @@ export default function SignUp() {
 
     function isEmail(email) {
         let regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-        
+
         if (email !== "" && email.match(regex)) {
             return true;
         } else {
@@ -64,6 +64,8 @@ export default function SignUp() {
                     <input type="password" placeholder="Confirm password" onChange={(e) => setPasswordConfirm(e.target.value)} />
                     <button type="submit">Create</button>
                 </div>
+
+                <StyledLink to="/" style={{ marginTop: "40px" }}>Back to Sign In</StyledLink>
 
                 {error ? <ErrorMessage>{error}</ErrorMessage> : null}
             </HomeDisplay>
