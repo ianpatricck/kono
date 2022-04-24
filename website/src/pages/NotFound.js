@@ -1,4 +1,4 @@
-import { NotFoundContainer } from '../styles/components'
+import { NotFoundContainer } from '../styles/components';
 
 export default function NotFound() {
 
