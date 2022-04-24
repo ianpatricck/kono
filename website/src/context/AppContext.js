@@ -1,27 +1,16 @@
-import React, { createContext, useState } from 'react'
-import { io } from 'socket.io-client' 
+import React, { createContext, useState } from 'react';
 
-const Context = createContext()
-
-const socket = io.connect("http://localhost:4000")
+const Context = createContext();
 
 function ApplicationProvider({ children }) { 
 
-    const [messageContent, setMessageContent] = useState([])
+    const [message, setMessage] = useState("Hello World");
 
     return (
-        <Context.Provider value={
-            { 
-                socket, 
-                messageContent, 
-                setMessageContent,
-            }
-            }>
-
+        <Context.Provider value={{message}}>
             { children }
-
         </Context.Provider>
     )
-}
+};
 
-export { Context, ApplicationProvider }
+export { Context, ApplicationProvider };
