@@ -45,7 +45,7 @@ export default function SignUp() {
 
         await api.post("/user/create", { name, email, password }).then((res) => {
             if (res.status === 201) {
-                navigate("/room");
+                navigate("/");
             } else {
                 setError(res.data.error);
             }
