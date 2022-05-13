@@ -63,7 +63,7 @@ class UserProvider {
             const user = await connection("users").where({ email: data.email }).select("id", "name", "tag", "bio", "avatar");
             const token = await jwt.sign({ data }, 'secret', { expiresIn: '1h' });
             
-            return { user: user[0], token }
+            return { user: user[0], token };
         
         } else {
             return false;
