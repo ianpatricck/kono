@@ -21,13 +21,13 @@ $ yarn install && yarn start
 - Start React app
 
 ```
-$ cd website
+$ cd ui
 $ yarn install && yarn start
 ```
 
 - Start electron
 
 ```
-$ cd native
-$ yarn install && yarn start
+$ cd ui
+$ yarn install && yarn electron
 ```
