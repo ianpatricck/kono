@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { HomeDisplay, StyledLink, ErrorMessage, SmoothPage } from '../styles/components';
@@ -12,6 +12,16 @@ export default function SignUp() {
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+
+    useEffect(() => {
+
+        const token = localStorage.getItem("auth_token");
+
+        if (token) {
+            navigate("/room");                
+        }
+
+    }, [navigate]);
 
     function isEmail(email) {
         let regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;

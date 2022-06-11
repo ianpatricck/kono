@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { HomeDisplay, StyledLink, ErrorMessage, SmoothPage } from '../styles/components';
@@ -13,6 +13,16 @@ export default function Home() {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+
+        const token = localStorage.getItem("auth_token");
+
+        if (token) {
+            navigate("/room");                
+        }
+
+    }, [navigate]);
+
     async function submitLoginData(e) {
         e.preventDefault();
 
@@ -22,7 +32,12 @@ export default function Home() {
 
         await api.post("/user/login", { email, password }).then((res) => {
             if (res.status === 200) {
-                console.log(res.data);
+
+                localStorage.setItem("auth_token", res.data.token);
+                localStorage.setItem("user_id", res.data.user.id);
+
+                navigate("/room");
+
             } else {
                 setError(res.data.error);
             }
