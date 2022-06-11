@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const { randomUUID } = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -61,13 +63,24 @@ class UserProvider {
         if (match) {
 
             const user = await connection("users").where({ email: data.email }).select("id", "name", "tag", "bio", "avatar");
-            const token = await jwt.sign({ data }, 'secret', { expiresIn: '1h' });
+            const token = await jwt.sign({ data }, process.env.JWT_SECRET, { expiresIn: '1h' });
             
             return { user: user[0], token };
         
         } else {
             return false;
         }
+    }
+
+    async auth(token) {
+
+        return await jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return false;
+            }
+ 
+            return true;
+        });     
     }
 }
 
