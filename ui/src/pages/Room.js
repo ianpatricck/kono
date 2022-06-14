@@ -1,32 +1,52 @@
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../context/AppContext';
-import { api } from "../api";
+import { SmoothPage, Navbar, MessageBox, TextField } from '../styles/components';
 
 export default function Room() {
 
-    const { message } = useContext(Context)
+    const { isAuth, authStatus } = useContext(Context)
     const navigate = useNavigate();
 
     useEffect(() => {
 
         const token = localStorage.getItem("auth_token");
 
-        api.post("user/auth", { token }).then((res) => {
-        
-            if (res.status !== 201 && res.data !== true) {
+        isAuth(token);
 
-                localStorage.clear(); 
-                navigate("/");                
-            }
+        if (authStatus === false) {
+            navigate("/");
+        }
 
-        });
+    }, [navigate, isAuth, authStatus]);
 
-    }, [navigate]);
+    function logout() {
+        localStorage.clear();
+        navigate("/");
+    }
 
     return (
-        <>
-            <h1>{ message }</h1>
-        </>
+        <SmoothPage>
+
+            <Navbar>
+                
+                <nav className="options">
+                    <button onClick={logout}>Logout</button>
+                </nav>
+
+                <nav className="users">
+                    <div>P</div>
+                    <div>Q</div>
+                    <div>R</div>
+                    <div>S</div>
+                    <div>T</div>
+                </nav>
+                
+            </Navbar> 
+
+            <MessageBox></MessageBox>
+            <TextField></TextField>
+
+        </SmoothPage>
     )
 };

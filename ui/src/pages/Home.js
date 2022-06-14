@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { HomeDisplay, StyledLink, ErrorMessage, SmoothPage } from '../styles/components';
 import { api } from "../api";
 
