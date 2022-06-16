@@ -1,3 +1,3 @@
-const { app } = require("./app");
+const { server } = require("./app");
 
-app.listen(4000, () => console.log("Server running on port 4000"));
+server.listen(4000, () => console.log("Server running on port 4000"));
