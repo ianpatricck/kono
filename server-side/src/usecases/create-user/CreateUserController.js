@@ -1,5 +1,3 @@
-const { CreateUserUseCase } = require("./CreateUserUseCase");
-
 class CreateUserController {
 
     usecase = null;

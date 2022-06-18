@@ -1,5 +1,3 @@
-const { LoginUseCase } = require("./LoginUseCase");
-
 class LoginController {
 
     usecase = null;
