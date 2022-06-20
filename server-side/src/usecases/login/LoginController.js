@@ -11,12 +11,12 @@ class LoginController {
         const { email, password } = req.body;
 
         try {
-            const userData = await this.usecase.execute({ email, password });
-            
-            return res.status(200).json(userData);
+
+            const userData = await this.usecase.execute({ email, password }); 
+            return res.status(201).json(userData);
 
         } catch (err) {
-            return res.status(401).json({
+            return res.json({
                 error: err.message
             });
         }

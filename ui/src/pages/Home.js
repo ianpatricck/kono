@@ -30,16 +30,18 @@ export default function Home() {
         }
 
         await api.post("/user/login", { email, password }).then((res) => {
-            if (res.status === 200) {
-
+            
+            if (res.status === 201) {
                 localStorage.setItem("auth_token", res.data.token);
-                localStorage.setItem("user_id", res.data.user.id);
+                localStorage.setItem("user_id", res.data.user_id);
 
                 navigate("/room");
+                return 0;
 
-            } else {
-                setError(res.data.error);
+            } else if (res.data.error) {
+                setError(res.data.error)
             }
+
         });
     }
 
