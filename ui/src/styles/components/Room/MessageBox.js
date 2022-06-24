@@ -8,6 +8,13 @@ align-items: center;
 justify-content: flex-end;
 height: 70vh;
 
+.loading {
+    font-family: "M PLUS";
+    color: ${(props) => props.theme.colors.clAuthor};
+    font-size: 1.2em;
+    margin: 1%;
+}
+
 .messages {
     width: 70%;
 }
@@ -39,11 +46,11 @@ height: 70vh;
     color: ${(props) => props.theme.colors.hvBgSecondary};
 }
 
-.messages .reveived {
+.messages .received {
     background-color: ${(props) => props.theme.colors.bgSuccess};
 }
 
-.messages .reveived span {
+.messages .received span {
     color: ${(props) => props.theme.colors.clAuthor};
 }
 
