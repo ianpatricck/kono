@@ -16,8 +16,11 @@ height: 70vh;
     }
 
     .messages {
-        width: 70%;
-        overflow-x: scroll; 
+        width: 70%;    
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column-reverse;
 
         ::-webkit-scrollbar {
             background-color: transparent;
