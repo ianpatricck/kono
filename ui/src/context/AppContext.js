@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { io } from "socket.io-client";
 import { api } from "../api";
 
 const Context = createContext();
@@ -6,6 +7,7 @@ const Context = createContext();
 function ApplicationProvider({ children }) { 
 
     const [authStatus, setAuthStatus] = useState(null);
+    const socket = io("http://localhost:4000");
 
     function isAuth(token) {
 
@@ -21,7 +23,7 @@ function ApplicationProvider({ children }) {
     }
 
     return (
-        <Context.Provider value={{ isAuth, authStatus }}>
+        <Context.Provider value={{ isAuth, authStatus, socket }}>
             { children }
         </Context.Provider>
     )
