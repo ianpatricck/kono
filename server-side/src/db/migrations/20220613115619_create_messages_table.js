@@ -1,6 +1,6 @@
 exports.up = function(knex) {
     return knex.schema.createTable("messages", (t) => {
-        t.string("id").notNull().primary();
+        t.increments("id");
         t.text("message");
         t.timestamp("created_at").defaultTo(knex.fn.now());
         t.timestamp("updated_at").defaultTo(knex.fn.now());
