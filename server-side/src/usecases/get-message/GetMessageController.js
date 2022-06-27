@@ -20,6 +20,12 @@ class GetMessageController {
         }
     }
 
+    async getOne(content) {
+
+        const messageContent = await this.messageProvider.get(content);
+        return messageContent;
+    }
+
 }
 
 module.exports = { GetMessageController };
