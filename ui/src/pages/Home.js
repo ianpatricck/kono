@@ -30,7 +30,7 @@ export default function Home() {
         }
 
         await api.post("/user/login", { email, password }).then((res) => {
-            
+
             if (res.status === 201) {
                 localStorage.setItem("auth_token", res.data.token);
                 localStorage.setItem("user_id", res.data.user.id);
