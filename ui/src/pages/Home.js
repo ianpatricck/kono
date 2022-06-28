@@ -34,6 +34,7 @@ export default function Home() {
             if (res.status === 201) {
                 localStorage.setItem("auth_token", res.data.token);
                 localStorage.setItem("user_id", res.data.user.id);
+                localStorage.setItem("user_name", res.data.user.name); 
 
                 navigate("/room");
                 return 0;
