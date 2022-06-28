@@ -23,9 +23,8 @@ io.on("connection", (socket) => {
             const messageReceivedPromise = getMessageController.getOne(msg);
             
             messageReceivedPromise.then((response) => {
-                socket.to("default").emit("room-message-received", response);
+                socket.nsp.to("default").emit("room-message-received", response);
             });
-
         
         }, 1500);
 
