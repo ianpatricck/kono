@@ -7,6 +7,7 @@ const Context = createContext();
 function ApplicationProvider({ children }) { 
 
     const [authStatus, setAuthStatus] = useState(null);
+
     const socket = io("http://localhost:4000");
 
     function isAuth(token) {
