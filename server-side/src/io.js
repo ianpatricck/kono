@@ -12,7 +12,7 @@ const io = new Server(server, {
 
 io.on("connection", (socket) => {  
 
-    socket.join("default");
+    socket.join("default");  
 
     socket.on("room-message-sent", (msg) => {
 
